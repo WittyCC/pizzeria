@@ -1,0 +1,16 @@
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 110px;
+  text-align: center;
+}
+
+font-family: 'Montez', cursive;
+
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: url('../img/pizzabg.jpg') no-repeat top right fixed;
+}
