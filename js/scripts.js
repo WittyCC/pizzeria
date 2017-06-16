@@ -4,48 +4,46 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
 }
 
-// function orderToppings(topping){
-//   this.topping = []
-//}
-//var custOrder = new pizzaOrder();
-
-var size = $("#pizzaSize").val();
-var doughCost;
+var toppingArray = [];
 var toppingQty = toppingArray.length;
-var toppingCost = (toppingQty * 2);
 
 //formula to compute cost
-function costCompute(doughCost, toppingCost) {
-  if (size === 1) {
+Pizza.prototype.costCompute = function() {
+//pizza size select
+  var doughCost = 0;
+  if (size === "small") {
     doughCost = 9;
-  } else if (size === 2) {
-    doughCost = 13;
-  } else if (size === 3) {
-    doughCost = 17;
-  } else {
+  } else if (size === "medium") {
+    doughCost += 13;
+  } else if (size === "large") {
+    doughCost += 17;
+  } else if (size === 0) {
     alert('Please select a size for your pizza.');
   }
-
-  var totalCost = (doughCost + toppingCost);
-    return totalCost
+  var toppingQty = toppingArray.length;
+  var toppingCost = (toppingQty * 2);
+  totalCost = (doughCost + toppingCost);
+    return totalCost;
 }
-
 
 //user interface logic
 $(document).ready(function(){
   $("form#pizzaOrder").submit(function(event){
     event.preventDefault();
-    $("#finalOrder").show();
+    debugger;
+    $("#orderConfirm").show();
     var name = $("input#customerName").val();
     var pizzaSize = $("#pizzaSize").val();
-    var toppingArray = [];
     $("input:checkbox[name=topping]:checked").each(function(){
-      toppingArray.push($(this).val());
+      var toppingSelect = $(this).val();
+      toppingArray.push(toppingSelect);
     })
+    var toppingQty = toppingArray.length;
+    var toppingCost = (toppingQty * 2);
+    var totalCost = (doughCost + toppingCost);
 
     $("#custThank").append(name);
-    $("#finalOrder").append("<li>" + pizzaSize + "pizza with toppings of " + toppingArray.join(", ") + "for a total cost of" + "<br>")
-    
-
+    $("#finalOrder").append("<li>" + "A " + pizzaSize + " pizza with toppings of " + toppingArray.join(", ") + "." + "<br>");
+    $("#totalCost").append(totalCost);
   })
 })
