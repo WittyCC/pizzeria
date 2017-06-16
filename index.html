@@ -29,9 +29,9 @@
               <div class="panel-body">
                 <select class="form-control" id="pizzaSize">
                   <option value=0></option>
-                  <option value=1>Small (8")</option>
-                  <option value=2>Medium (12")</option>
-                  <option value=3>Large (16")</option>
+                  <option value=1>Small (8") for $9</option>
+                  <option value=2>Medium (12") for $13</option>
+                  <option value=3>Large (16") for $17</option>
                 </select>
               </div>
             </div>
@@ -40,7 +40,7 @@
           <div class="col-md-6">
             <div class="panel panel-warning">
               <div class="panel-heading">
-                <h4>Please select the toppings that you would like on your pizza</h4>
+                <h4>Please select the toppings that you would like on your pizza ($2 per topping)</h4>
               </div>
               <div class="panel-body">
                 <div class="form-group">
@@ -58,7 +58,24 @@
             </div>
           </div>
         </div>
+        <div class="buttonholder">
+          <span class="btn btn-success" id="add-pizza">Add another order</span>
+          <button type="submit" class="btn btn-success">Gimme my pizza!</button>
+        </div>
       </form>
+      <br></br>
+      <div class="panel panel-danger" id="orderConfirm">
+        <div class="panel-heading">
+          <h3>Order Confirmation</h3>
+        </div>
+        <div class="panel-body">
+          <p>Thank you for your order!</p>
+          <p><span id="custThank"></span>, you ordered:</p>
+          <ul id="finalOrder">
+          </ul>
+          <p>Your total cost is: $<span id="totalCost"></span>.</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
