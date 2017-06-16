@@ -1,7 +1,7 @@
 //business logic
 function Pizza(size, toppings) {
   this.size = pizzaSize;
-  this.toppings = toppings;
+  this.topping = toppings;
 }
 
 var toppingArray = [];
@@ -10,7 +10,7 @@ var toppingQty = toppingArray.length;
 //formula to compute cost
 Pizza.prototype.costCompute = function() {
 //pizza size select
-  var doughCost = 0;
+  var doughCost;
   if (size === "small") {
     doughCost = 9;
   } else if (size === "medium") {

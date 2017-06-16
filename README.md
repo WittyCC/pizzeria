@@ -6,7 +6,7 @@
 
 ## Description
 
-_A webpage that accepts input where a user can choose a size to order a pizza and choose one or more individual toppings and see the final cost for the order_
+_A webpage that accepts input where a user can choose a size to order a pizza and one or more individual toppings and see the final cost for the order_
 
 ## Setup/Installation Requirements
 
