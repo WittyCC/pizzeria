@@ -13,12 +13,52 @@
     <div class="container">
       <h1>PIZZERIA EPICODUS</h1>
       <h2>Create your perfect pizza. Let's begin!</h2>
-      <select class="form-control" id="pizzaSize">
-        <option value=0>What is the size of your pizza?</option>
-        <option value=1>Small (8")</option>
-        <option value=2>Medium (12")</option>
-        <option value=3>Large (16")</option>
-      </select>
+      <form id="pizzaOrder">
+
+        <div class="form-group">
+          <label for="new_customer">Please enter your name:</label>
+          <input type="text" class="form-control" id="customerName">
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <h4>What is the size of your pizza?</h4>
+              </div>
+              <div class="panel-body">
+                <select class="form-control" id="pizzaSize">
+                  <option value=0></option>
+                  <option value=1>Small (8")</option>
+                  <option value=2>Medium (12")</option>
+                  <option value=3>Large (16")</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <h4>Please select the toppings that you would like on your pizza</h4>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <input type="checkbox" name="topping" value="mozzarella">Mozzarella Cheese<br>
+                  <input type="checkbox" name="topping" value="pepperoni">Pepperoni<br>
+                  <input type="checkbox" name="topping" value="g_pepper">Green Pepper<br>
+                  <input type="checkbox" name="topping" value="b_olives">Black Olives<br>
+                  <input type="checkbox" name="topping" value="mushrooms">Mushrooms<br>
+                  <input type="checkbox" name="topping" value="onions">Fresh Onions<br>
+                  <input type="checkbox" name="topping" value="i_sausage">Italian Sausage.<br>
+                  <input type="checkbox" name="topping" value="c_bacon">Canadian Bacon<br>
+                  <input type="checkbox" name="topping" value="anchovy">Anchovies.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </body>
 </html>
