@@ -1,88 +1,56 @@
-//user interface logic
-$(document).ready(function(){
-  var order = new Order();
-  $("form#pizzaOrder").submit(function(event){
-    event.preventDefault();
-debugger;
-    var name = $("input#customerName").val();
-    var pizzaSize = $("#pizzaSize").val();
+// BUSINESS LOGIC
 
-    $("#orderConfirm").show();
+// function Order(name, pizzas) {
+//   this.name;
+//   this.pizzas = [];
+// }
 
-    $("input:checkbox[name=topping]:checked").each(function(){
-      var toppingSelect = $(this).val();
-      toppingArray.push(toppingSelect);
-    })
-
-    $("#custThank").append(name);
-    $("#finalOrder").append("<li>" + "A " + pizzaSize + " pizza with toppings of " + toppingArray.join(", ") + "." + "<br>");
-    $("#totalCost").text(order.costCompute());
-  })
-})
-
-//business logic
-function Order() {
-  this.name;
-  this.pizzas = [];
-}
+var size = "";
+var toppings = [];
+var toppingSelect = "";
+var cost = 0;
+var finalTotal = 0;
 
 function Pizza(size, toppings) {
-  this.size = pizzaSize;
-  this.toppings = [];
+  this.size = size;
+  this.toppings = toppings;
 }
-
-var toppingArray = [];
-var toppingQty = toppingArray.length;
 
 //formula to compute cost
-Order.prototype.costCompute = function() {
-  var cost = 0;
-  this.pizzas.forEach(function(pizza) {
-    if (pizza.size === "small") {
-      cost += 9;
-    } else if (pizza.size === "medium") {
-      cost += 13;
-    } else if (size === "large") {
-      cost += 17;
-    }
+Pizza.prototype.costCompute = function() {
+  if (this.size === "small") {
+    cost = (this.toppings.length * 2) + 9;
+    return cost;
+  } else if (this.size === "medium") {
+    cost = (this.toppings.length * 2) + 13;
+    return cost;
+  } else if (this.size === "large") {
+    cost = (this.toppings.length * 2) + 17;
+    return cost;
+  }
+}
 
-    pizza.toppings.forEach(function(topping) {
-      if (topping === "mozzarella cheese") {
-        cost += 2;
-      }
-      if (topping === "pepperoni") {
-        cost += 2;
-      }
-      if (topping === "green bell peppers") {
-        cost += 2;
-      }
-      if (topping === "black olives") {
-        cost += 2;
-      }
-      if (topping === "mushrooms") {
-        cost += 2;
-      }
-      if (topping === "fresh onions") {
-        cost += 2;
-      }
-      if (topping === "italian sausage") {
-        cost += 2;
-      }
-      if (topping === "canadian bacon") {
-        cost += 2;
-      }
-      if (topping === "anchovies") {
-        cost += 2;
-      }
+//USER INTERFACE LOGIC
+
+$(document).ready(function(){
+//  var order = new Order();
+  $("form#pizzaOrder").submit(function(event){
+    event.preventDefault();
+//debugger;
+    var name = $("input#customerName").val();
+
+    size = $("#size").val();
+
+    $("input:checkbox[name=topping]:checked").each(function(){
+      toppingSelect = $(this).val();
+      toppings.push(toppingSelect);
     });
-  });
-  return cost;
-}
 
-Order.prototype.addPizza = function(pizza) {
-  this.pizzas.push(pizza);
-}
-
-Pizza.prototype.addTopping = function(topping) {
-  this.toppings.push(topping);
-}
+    var newPizza = new Pizza(size, toppings);
+    finalTotal = newPizza.costCompute();
+    $("#orderConfirm").show();
+    $("#custThank").append(name);
+    $("#finalOrder").append("<li>" + "A " + size + " pizza with toppings of " + toppings.join(", ") + "." + "<br>");
+    $("#totalCost").text(finalTotal);
+  })
+});
