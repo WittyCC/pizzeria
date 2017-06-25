@@ -1,6 +1,6 @@
 # _Pizzeria_
 
-#### _A webpage that takes an order for pizza according to a user's preferences as to size and toppings._
+#### _A webpage that takes an order for pizza according to a user's preference as to size and toppings._
 
 #### By _**Witty Chang**_
 
@@ -16,7 +16,8 @@ _A webpage that accepts input where a user can choose a size to order a pizza an
 ## Specifications
 |Behavior|Input|Output|
 |---|---|---|
-|The user (customer) has the option of typing in their name in the 'Please enter your name form field'. The user can then select their preferred pizza size and their preferred toppings with the corresponding costs for each being visible and then proceed to click the "Gimme my pizza!" button to find out the total cost for their order|User name: 'John Doe', pizza size selection: 'Small 8" for $9', toppings selection: check 'Pepperoni' and 'Mozzarella Cheese.'|An 'Order Confirmation' box shows up that says: 'Thank you for your order! John Doe, you ordered: A small pizza with toppings of mozzarella cheese, pepperoni. Your total cost is: $13.'|
+|The user (customer) has the option of typing in their name in the 'Please enter your name' form field. The user can then select their preferred pizza size and their preferred toppings with the corresponding costs for each being visible, and then proceed to click the 'Gimme my pizza!' button to find out the total cost for their order|User name: 'John Doe'; pizza size selection: 'Small 8" for $9'; toppings selection: check 'Pepperoni' and 'Mozzarella Cheese.'|An 'Order Confirmation' box shows up that says: 'Thank you for your order! John Doe, you ordered: A small pizza with toppings of mozzarella cheese, pepperoni. Your total cost is: $13.'|
+|The user (customer) does not input anything and simply proceeds to click the 'Gimme my pizza!" button|User makes no selection whatsoever and clicks 'Gimme my pizza!' button|An 'Order Confirmation' box shows up that says: 'Thank you for your order! (blank), you ordered: A 0 pizza with toppings of (blank). Your total cost is: $(blank).'|
 
 ## Known Bugs
 
