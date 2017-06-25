@@ -12,9 +12,14 @@ _A webpage that accepts input where a user can choose a size to order a pizza an
 
 * _Click this [link](https://wcchang1382.github.io/pizzeria/) to view the page._
 
+
+## Specifications
+|Behavior|Input|Output|
+|The user (customer) has the option of typing in their name in the 'Please enter your name form field'. The user can then select their preferred pizza size and their preferred toppings with the corresponding costs for each being visible and then proceed to click the "Gimme my pizza!" button to find out the total cost for their order|User name: 'John Doe', pizza size selection: 'Small 8" for $9', toppings selection: check 'Pepperoni' and 'Mozzarella Cheese.'|An 'Order Confirmation' box shows up that says: 'Thank you for your order! John Doe, you ordered: A small pizza with toppings of mozzarella cheese, pepperoni. Your total cost is: $13.' 
+
 ## Known Bugs
 
-_Currently cannot show output for total cost_
+_No known bugs._
 
 ## Support and contact details
 
@@ -26,9 +31,7 @@ _HTML, CSS, Bootstrap, JavaScript, jQuery, and Google Fonts_
 
 ### License
 
-_The MIT License (MIT)
-
-Copyright (c) [2017] [Witty Chang]
+_Copyright (c) [2017] [Witty Chang]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
